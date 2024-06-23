@@ -50,25 +50,6 @@ const resolvers = {
             throw AuthenticationError;
         },
 
-        saveBook1: async (parent, { bookId, title, description, image, link}, context) => {
-            console.log(bookId);
-            console.log(title);
-            console.log(description);
-            if (context.user) {
-                const updatedUser = await User.findOneAndUpdate(
-                    { _id: context.user._id },
-                    { $addToSet: { savedBooks: {bookId: bookId,
-                                                title: title,
-                                                description: description,
-                                                image: image,
-                                                link: link} }},
-                    { new: true, runValidators: true }
-                );
-                return updatedUser;
-            }
-            throw AuthenticationError;
-        },
-
         removeBook: async (parent, { bookId: bookId }, context) => {
             if (context.user) {
                 const updatedUser = await User.findOneAndUpdate(

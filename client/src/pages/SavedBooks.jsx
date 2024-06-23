@@ -35,7 +35,7 @@ const SavedBooks = () => {
         You need to be logged in to see this. Use the navigation links above to
         sign up or log in!
       </h4>
-    );s
+    );
   }
 
   // create function that accepts the book's mongo _id value as param and deletes the book from the database

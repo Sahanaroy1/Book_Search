@@ -13,7 +13,7 @@ import { searchGoogleBooks } from '../utils/API';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
 
 // import Apollo hook and mutation
-import { SAVE_BOOK_1 } from '../utils/mutation';
+import { SAVE_BOOK} from '../utils/mutation';
 import { useMutation } from '@apollo/client';
 
 const SearchBooks = () => {
@@ -25,7 +25,7 @@ const SearchBooks = () => {
     return () => saveBookIds(savedBookIds);
   });
 
-  const [saveBook] = useMutation(SAVE_BOOK_1);
+  const [saveBook] = useMutation(SAVE_BOOK);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -71,11 +71,7 @@ const SearchBooks = () => {
       
       const {response} = await saveBook({
         variables: {
-          bookId: bookToSave.bookId,
-          title: bookToSave.title,
-          description: bookToSave.description,
-          image: bookToSave.image,
-          link: bookToSave.link
+          bookData: bookToSave
         },
       });
 
