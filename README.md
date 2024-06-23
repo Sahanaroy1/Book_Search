@@ -28,3 +28,6 @@ https://book-search-24of.onrender.com
 
 Snippet of the Web Application:
 <img width="1360" alt="First snippet" src="https://github.com/Sahanaroy1/Book_Search/assets/127791384/4adda1f5-be40-40d7-addc-1b7829c42695">
+
+
+<img width="1312" alt="Second" src="https://github.com/Sahanaroy1/Book_Search/assets/127791384/986a2b76-25ee-45de-b040-2df76386e854">
