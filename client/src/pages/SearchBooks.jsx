@@ -13,7 +13,7 @@ import { searchGoogleBooks } from '../utils/API';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
 
 // import Apollo hook and mutation
-import { SAVE_BOOK } from '../utils/mutation';
+import { SAVE_BOOK_1 } from '../utils/mutation';
 import { useMutation } from '@apollo/client';
 
 const SearchBooks = () => {
@@ -32,7 +32,7 @@ const SearchBooks = () => {
   });
 
   // use the SAVE_BOOK mutation
-  const [saveBook] = useMutation(SAVE_BOOK);
+  const [saveBook] = useMutation(SAVE_BOOK_1);
 
   // create method to search for books and set state on form submit
   const handleFormSubmit = async (event) => {
@@ -80,15 +80,19 @@ const SearchBooks = () => {
 
     try {
       console.log(bookToSave);
-      const response = await saveBook({
+      
+      const {response} = await saveBook({
         variables: {
-          input: bookToSave
-        }
+          bookId: bookToSave.bookId,
+          title: bookToSave.title,
+          description: bookToSave.description,
+          image: bookToSave.image
+        },
       });
 
-      if (!response) {
-        throw new Error('something went wrong!');
-      }
+      // if (!response) {
+      //   throw new Error('something went wrong!');
+      // }
 
       // if book successfully saves to user's account, save book id to state
       setSavedBookIds([...savedBookIds, bookToSave.bookId]);

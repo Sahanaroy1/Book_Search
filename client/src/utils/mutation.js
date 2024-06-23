@@ -41,6 +41,20 @@ export const SAVE_BOOK = gql`
     }
   }
 `;
+//Saved the book by attributes 
+//temporary change
+export const SAVE_BOOK_1 = gql`
+  mutation saveBook1($bookId: String!, $title: String!, $description: String!, $image: String!) {
+    saveBook1(bookId: $bookId, title: $title, description: $description, image: $image) {
+      _id
+      username
+      savedBooks {
+        bookId
+        title
+      }
+    }
+  }
+`;
 
 export const REMOVE_BOOK = gql`
   mutation removeBook($bookId: ID!) {
