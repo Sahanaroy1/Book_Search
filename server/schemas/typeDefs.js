@@ -10,10 +10,9 @@ const typeDefs = `
     type Book {
         bookId: ID!
         authors: [String]
+        title: String!
         description: String
         image: String
-        link: String
-        title: String!
     }
     
     type Auth {
@@ -22,12 +21,11 @@ const typeDefs = `
     }
 
     input BookInput {
-        authors: [String]
-        description: String!
         bookId: String!
-        image: String
-        link: String
+        authors: [String]
         title: String!
+        description: String
+        image: String
     }
 
     type Query {
