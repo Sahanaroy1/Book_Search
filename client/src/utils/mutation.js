@@ -44,8 +44,8 @@ export const SAVE_BOOK = gql`
 //Saved the book by attributes 
 //temporary change
 export const SAVE_BOOK_1 = gql`
-  mutation saveBook1($bookId: String!, $title: String!, $description: String!, $image: String!) {
-    saveBook1(bookId: $bookId, title: $title, description: $description, image: $image) {
+  mutation saveBook1($bookId: String!, $title: String!, $description: String!, $image: String!, $link: String!) {
+    saveBook1(bookId: $bookId, title: $title, description: $description, image: $image, link: $link) {
       _id
       username
       savedBooks {
@@ -65,6 +65,7 @@ export const REMOVE_BOOK = gql`
         bookId
         authors
         image
+        link
         title
         description
       }

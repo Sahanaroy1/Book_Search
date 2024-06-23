@@ -23,7 +23,6 @@ const LoginForm = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    // check if form has everything (as per react-bootstrap docs)
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
@@ -48,7 +47,6 @@ const LoginForm = () => {
   };
 
   return (
-    <>
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
           Something went wrong with your login credentials!
@@ -85,7 +83,6 @@ const LoginForm = () => {
           Submit
         </Button>
       </Form>
-    </>
   );
 };
 

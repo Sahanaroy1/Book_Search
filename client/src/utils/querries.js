@@ -1,4 +1,3 @@
-
 import { gql } from "@apollo/client";
 
 export const QUERY_ME = gql`
@@ -14,6 +13,7 @@ export const QUERY_ME = gql`
         description
         title
         image
+        link
       }
     }
   }

@@ -50,7 +50,7 @@ const resolvers = {
             throw AuthenticationError;
         },
 
-        saveBook1: async (parent, { bookId, title, description, image}, context) => {
+        saveBook1: async (parent, { bookId, title, description, image, link}, context) => {
             console.log(bookId);
             console.log(title);
             console.log(description);
@@ -60,7 +60,8 @@ const resolvers = {
                     { $addToSet: { savedBooks: {bookId: bookId,
                                                 title: title,
                                                 description: description,
-                                                image: image} }},
+                                                image: image,
+                                                link: link} }},
                     { new: true, runValidators: true }
                 );
                 return updatedUser;
