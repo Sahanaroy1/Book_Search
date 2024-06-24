@@ -41,7 +41,7 @@ const SearchBooks = () => {
       }
 
       const { items } = await response.json();
-      console.log(items);
+   
       const bookData = items.map((book) => ({
         bookId: book.id,
         authors: book.volumeInfo.authors || ['No author to display'],
@@ -66,9 +66,7 @@ const SearchBooks = () => {
     if (!token) {
       return false;
     }
-    try {
-      console.log(bookToSave);
-      
+    try {    
       const {response} = await saveBook({
         variables: {
           bookData: bookToSave

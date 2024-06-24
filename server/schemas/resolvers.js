@@ -9,7 +9,6 @@ const resolvers = {
 
                 return userData;
             }
-
             throw AuthenticationError;
         },
     },

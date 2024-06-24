@@ -18,7 +18,7 @@ const SavedBooks = () => {
   const [removeBook] = useMutation(REMOVE_BOOK);
 
   const { loading, data } = useQuery(QUERY_ME);
-  console.log(data);
+ 
   const userData = data?.me;
   // navigate to personal profile page if username is yours
   if (!Auth.loggedIn() ) {
